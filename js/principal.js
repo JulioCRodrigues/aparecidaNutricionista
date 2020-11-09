@@ -1,48 +1,57 @@
-var titulo = document.querySelector(".titulo");
-titulo.textContent = "Cida Nutrição";
+    var titulo = document.querySelector(".titulo");
+    titulo.textContent = "Cida Nutrição";
 
-//manipulando os dados do primeiro paciente
+    //manipulando os dados do primeiro paciente
 
-//selecionando o primeiro paciente através do ID
-var pacientes = document.querySelectorAll(".paciente");
-console.log(pacientes);
-
-//selecionando peso e altura atraves do paciente
-var tdPeso = paciente.querySelector(".info-peso");
-var tdAltura = paciente.querySelector(".info-altura");
-
-//pegando somente o conteúdo das variaveis
-var peso = tdPeso.textContent;
-var altura = tdAltura.textContent;
+    //selecionando o primeiro paciente através do ID
+    var pacientes = document.querySelectorAll(".paciente");
+    console.log(paciente);
 
 
-//selecionando a coluna IMC
-var tdIMC = paciente.querySelector(".info-imc");
+    for (var i = 0; i < pacientes.length; i++) {
 
-//alterando resultado IMC
-tdIMC.textContent = imc;
+        var paciente = pacientes[i];
 
-var pesoValido = true;
-var alturaValida = true;
+        //selecionando peso e altura atraves do paciente
+        var tdPeso = paciente.querySelector(".info-peso");
+        var tdAltura = paciente.querySelector(".info-altura");
 
-//validndo os dados para peso e altura
-if(peso <= 0 || peso >= 1000){
-    console.log("Peso inválido!");
-    tdIMC.textContent = "Peso inválido!";
-    pesoValido = false;
-}
+        var tdIMC = paciente.querySelector(".info-imc");
 
-if(altura <= 0 || altura >= 3.0){
-    console.log("Altura inválida");
-    tdIMC.textContent = "Altura inválida!";
-    alturaValida = false;
-}
+        //pegando somente o conteúdo das variaveis
+        var peso = tdPeso.textContent;
+        var altura = tdAltura.textContent;
+
+        var pesoValido = true;
+        var alturaValida = true;
+        //selecionando a coluna IMC
+
+        if (peso <= 0 || peso >= 1000) {
+            console.log("Peso inválido!");
+            tdIMC.textContent = "Peso inválido!";
+            pesoValido = false;
+        }
+
+        if (altura <= 0 || altura >= 3.0) {
+            console.log("Altura inválida");
+            tdIMC.textContent = "Altura inválida!";
+            alturaValida = false;
+        }
 
 
-if(pesoValido && alturaValida){
-    //calculando o IMC
-    var imc = peso / (altura * altura);
-    tdIMC.textContent = imc;
-} else{
-    tdIMC.textContent = "Altura ou peso inválidos!";
-};
+        if (pesoValido && alturaValida) {
+            //calculando o IMC
+            var imc = peso / (altura * altura);
+            tdIMC.textContent = imc.toFixed(2);
+        } else {
+            tdIMC.textContent = "Altura ou peso inválidos!";
+        };
+
+    }
+        
+
+        
+
+
+ 
+
