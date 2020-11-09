@@ -30,12 +30,14 @@
             console.log("Peso inválido!");
             tdIMC.textContent = "Peso inválido!";
             pesoValido = false;
+            paciente.classList.add("paciente-invalido");
         }
 
         if (altura <= 0 || altura >= 3.0) {
             console.log("Altura inválida");
             tdIMC.textContent = "Altura inválida!";
             alturaValida = false;
+            paciente.classList.add("paciente-invalido");
         }
 
 
